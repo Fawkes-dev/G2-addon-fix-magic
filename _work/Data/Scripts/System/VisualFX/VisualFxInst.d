@@ -1362,7 +1362,7 @@ instance spellFX_ChargeFireball(CFx_Base_Proto)
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_ChargeFireball_COLLIDE";
 	emFXCollDyn_S = "spellFX_ChargeFireball_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emFXCollStatAlign_S = "COLLISIONNORMAL";
 	emFXCreatedOwnTrj = 0;
 	emTrjTargetRange = 20;
@@ -1496,6 +1496,8 @@ instance spellFX_ChargeFireball_COLLIDEDYNFX(CFx_Base_Proto)
 	emTrjOriginNode = "BIP01";
 	emtrjmode_s = "FIXED";
 	lightPresetname = "FIRESMALL";
+
+	emFXCreate_S = "VOB_MAGICBURN";
 };
 
 instance spellFX_ChargeFireball_COLLIDEDYNFX_KEY_INVEST_1(C_ParticleFXEmitKey) { visname_S = "MFX_Fireball_Collide1"; sfxid = "MFX_Fireball_Collide1"; };
@@ -1728,7 +1730,7 @@ instance spellFX_Firestorm_SPREAD(CFx_Base_Proto)
 	emActionCollDyn_S = "CREATEONCE";
 	// emFXCollStat_S = "spellFX_Firestorm_COLLIDE"; // [Edenfeld] Wenn einkommentiert, erzeugt sehr viele VFX -> nicht sichtbar/Performance Probs.
 	emFXCollDyn_S = "spellFX_ChargeFireball_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
@@ -1877,7 +1879,7 @@ instance spellFX_Pyrokinesis_SPREAD(CFx_Base_Proto)
 	emActionCollDyn_S = "CREATEONCE";
 	// emFXCollStat_S = "spellFX_Firestorm_COLLIDE"; // [Edenfeld] Wenn einkommentiert, erzeugt sehr viele VFX -> nicht sichtbar/Performance Probs.
 	emFXCollDyn_S = "spellFX_ChargeFireball_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
@@ -1930,7 +1932,7 @@ instance spellFX_FireRain_RAIN(CFx_Base_Proto)
 	emTrjOriginNode = "ZS_RIGHTHAND";
 	emActionCollDyn_S = "CREATEONCE";
 	emFXCollDyn_S = "spellFX_ChargeFireball_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emFXCollDynAlign_S = "COLLISIONNORMAL";
 	emCheckCollision = 1;
 	LightPresetName = "CATACLYSM";
