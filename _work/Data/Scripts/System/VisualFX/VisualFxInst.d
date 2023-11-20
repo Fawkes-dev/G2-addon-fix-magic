@@ -253,6 +253,8 @@ instance spellFX_SuckEnergy(CFx_Base_Proto)
 	emActionCollStat_S = "COLLIDE";
 	emActionCollDyn_S = "CREATEONCE";
 	// emFXCollDyn_S = "spellFX_Whirlwind_SENDPERCEPTION";
+
+	emFXCollDyn_S = "spellFX_SuckEnergy_TARGET";
 	emFXCollDynPerc_S = "spellFX_SuckEnergy_SENDPERCEPTION";
 
 	emTrjTargetRange = 20;
@@ -314,11 +316,16 @@ instance spellFX_SuckEnergy_BloodFly(CFx_Base_Proto)
 	emtrjdynupdatedelay = 0.01;
 };
 
-instance spellFX_SuckEnergy_SENDPERCEPTION(CFx_Base_Proto)
+instance spellFX_SuckEnergy_TARGET(CFx_Base_Proto)
 {
 	visname_S = "MFX_SUCKENERGY_TARGET";
-	sendAssessMagic = 1;
 	sfxid = "MFX_SuckEnergy_Target";
+};
+
+instance spellFX_SuckEnergy_SENDPERCEPTION(CFx_Base_Proto)
+{
+	visname_S = "";
+	sendAssessMagic = 1;
 };
 
 ///   													XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
