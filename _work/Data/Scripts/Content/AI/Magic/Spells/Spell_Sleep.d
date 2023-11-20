@@ -38,6 +38,7 @@ func int Spell_Logic_Sleep(var int manaInvested) // Parameter manaInvested wird 
 		&& (other.guild != GIL_DMT)
 		&& (other.guild != GIL_PAL))
 		{
+			other.aivar[AIV_StateTime] = 0;
 			Npc_ClearAIQueue(other);
 			B_ClearPerceptions(other);
 			AI_StartState(other, ZS_MagicSleep, 0, "");

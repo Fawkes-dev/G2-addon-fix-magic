@@ -69,6 +69,8 @@ func void ZS_MagicFlee()
 		if (randy == 1) { AI_PlayAniBS(self, "T_STAND_2_FEAR_VICTIM2", BS_STAND); };
 		if (randy == 2) { AI_PlayAniBS(self, "T_STAND_2_FEAR_VICTIM3", BS_STAND); };
 	};
+
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_MagicFlee_Loop()
@@ -78,6 +80,11 @@ func int ZS_MagicFlee_Loop()
 		Npc_ClearAIQueue(self);
 		B_StopMagicFlee();
 		// return LOOP_END;
+	};
+
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
+	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
 };
 

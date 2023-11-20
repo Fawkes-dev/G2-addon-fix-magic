@@ -50,6 +50,8 @@ func int ZS_ShortZapped()
 	{
 		AI_PlayAni(self, "T_STAND_2_LIGHTNING_VICTIM");
 	};
+
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_ShortZapped_Loop()
@@ -57,6 +59,11 @@ func int ZS_ShortZapped_Loop()
 	if (Npc_GetStateTime(self) > SPL_TIME_SHORTZAPPED)
 	{
 		B_StopShortZapped();
+	};
+
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
+	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
 };
 

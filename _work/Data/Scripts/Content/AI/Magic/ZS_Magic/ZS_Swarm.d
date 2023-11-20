@@ -6,6 +6,7 @@ func void B_RestartSwarm()
 {
 	if (Npc_GetLastHitSpellID(self) == SPL_Swarm)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
 	};
 };
@@ -48,7 +49,7 @@ func int ZS_Swarm()
 		AI_PlayAniBS(self, "T_STAND_2_SWARM_VICTIM", BS_UNCONSCIOUS);
 	};
 
-	self.aivar[AIV_SwarmStateTime] = 0;
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_Swarm_Loop()
@@ -62,8 +63,10 @@ func int ZS_Swarm_Loop()
 	};
 
 	// LOOP FUNC
-	if (Npc_GetStateTime(self) != self.aivar[AIV_SwarmStateTime])
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
+
 		if (Npc_GetStateTime(self) == 2)
 		{
 			B_Say(self, other, "$RunAway");
@@ -80,8 +83,6 @@ func int ZS_Swarm_Loop()
 		{
 			B_Say(self, other, "$Aargh_1");
 		};
-
-		self.aivar[AIV_SwarmStateTime] = Npc_GetStateTime(self);
 
 		// ------ Damage abziehen, aber NICHT sterben (immer mindeststens 1 LE behalten) ------
 		if (self.attribute[ATR_HITPOINTS] > SPL_Swarm_DAMAGE)

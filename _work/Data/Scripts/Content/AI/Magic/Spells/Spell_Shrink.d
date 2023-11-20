@@ -44,6 +44,7 @@ func void Spell_Cast_Shrink()
 	&& (other.guild > GIL_SEPERATOR_HUM) // nicht auf Humans
 	&& (other.aivar[AIV_MM_ShrinkState] == 0)) // nur auf bisher ungeschrumpfte Monster!
 	{
+		other.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(other);
 		B_ClearPerceptions(other);
 		AI_StartState(other, ZS_MagicShrink, 0, "");

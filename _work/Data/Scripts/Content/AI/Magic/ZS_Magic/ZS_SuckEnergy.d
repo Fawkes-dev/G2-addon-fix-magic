@@ -8,6 +8,7 @@ func void B_RestartSuckEnergy()
 {
 	if (Npc_GetLastHitSpellID(self) == SPL_SuckEnergy)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
 		AI_PlayAni(self, "T_STAND_2_SUCKENERGY_VICTIM");
 	};
@@ -47,9 +48,9 @@ func int ZS_SuckEnergy()
 
 	// Wld_PlayEffect("spellFX_SuckEnergy_SlowTime", self, self, 0, 0, 0, FALSE);
 
-	self.aivar[AIV_SuckEnergyStateTime] = 1;
-
 	Temp_SuckEnergy_DistToPlayer = Npc_GetDistToPlayer(self);
+
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_SuckEnergy_Loop()
@@ -64,8 +65,10 @@ func int ZS_SuckEnergy_Loop()
 	};
 
 	// LOOP FUNC
-	if (Npc_GetStateTime(self) != self.aivar[AIV_SuckEnergyStateTime])
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
+
 		if (Npc_GetStateTime(self) == 0)
 		{
 			// Opfer wird in Bodystate Unconscious versetzt
@@ -76,8 +79,6 @@ func int ZS_SuckEnergy_Loop()
 
 			Wld_PlayEffect("spellFX_SuckEnergy_BloodFly", self, hero, 0, 0, 0, FALSE);
 		};
-
-		self.aivar[AIV_SuckEnergyStateTime] = Npc_GetStateTime(self);
 
 		// ------ Damage abziehen, aber NICHT sterben (immer mindeststens 1 LE behalten) ------
 		if (self.attribute[ATR_HITPOINTS] > SPL_SuckEnergy_DAMAGE)

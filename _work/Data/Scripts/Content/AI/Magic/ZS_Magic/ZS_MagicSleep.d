@@ -64,6 +64,8 @@ func void ZS_MagicSleep()
 	};
 
 	AI_PlayAniBS(self, "T_STAND_2_VICTIM_SLE", BS_LIE);
+
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_MagicSleep_Loop()
@@ -73,6 +75,11 @@ func int ZS_MagicSleep_Loop()
 		Npc_ClearAIQueue(self);
 		B_StopMagicSleep();
 		return LOOP_END;
+	};
+
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
+	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
 };
 

@@ -7,6 +7,7 @@ func void B_RestartFreeze()
 	if ((Npc_GetLastHitSpellID(self) == SPL_IceCube)
 	|| (Npc_GetLastHitSpellID(self) == SPL_IceWave))
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
 	};
 };
@@ -46,7 +47,7 @@ func int ZS_MagicFreeze()
 		AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
 	};
 
-	self.aivar[AIV_FreezeStateTime] = 0;
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_MagicFreeze_Loop()
@@ -60,9 +61,9 @@ func int ZS_MagicFreeze_Loop()
 	};
 
 	// LOOP FUNC
-	if (Npc_GetStateTime(self) != self.aivar[AIV_FreezeStateTime])
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
-		self.aivar[AIV_FreezeStateTime] = Npc_GetStateTime(self);
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 
 		// ------ Damage abziehen, aber NICHT sterben (immer mindeststens 1 LE behalten) ------
 		if (self.attribute[ATR_HITPOINTS] > (self.attribute[ATR_HITPOINTS] - SPL_FREEZE_DAMAGE))

@@ -12,6 +12,7 @@ func void B_RestartGreententacle()
 {
 	if (Npc_GetLastHitSpellID(self) == SPL_Greententacle)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
 	};
 };
@@ -69,7 +70,7 @@ func int ZS_Greententacle()
 		};
 	};
 
-	// self.aivar[AIV_GreenTentacleStateTime] = 0;
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_Greententacle_Loop()
@@ -80,6 +81,11 @@ func int ZS_Greententacle_Loop()
 	{
 		B_StopGreententacle();
 		return LOOP_END;
+	};
+
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
+	{
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
 
 	/*

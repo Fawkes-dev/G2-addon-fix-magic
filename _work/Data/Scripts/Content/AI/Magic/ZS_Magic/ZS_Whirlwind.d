@@ -6,6 +6,7 @@ func void B_RestartWhirlwind()
 {
 	if (Npc_GetLastHitSpellID(self) == SPL_Whirlwind)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
 	};
 };
@@ -48,7 +49,7 @@ func int ZS_Whirlwind()
 		AI_PlayAniBS(self, "T_STAND_2_WHIRLWIND_VICTIM", BS_UNCONSCIOUS);
 	};
 
-	self.aivar[AIV_WhirlwindStateTime] = 0;
+	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
 func int ZS_Whirlwind_Loop()
@@ -62,9 +63,9 @@ func int ZS_Whirlwind_Loop()
 	};
 
 	// LOOP FUNC
-	if (Npc_GetStateTime(self) != self.aivar[AIV_WhirlwindStateTime])
+	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
-		self.aivar[AIV_WhirlwindStateTime] = Npc_GetStateTime(self);
+		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 
 		// ------ Damage abziehen, aber NICHT sterben (immer mindeststens 1 LE behalten) ------
 		if (self.attribute[ATR_HITPOINTS] > SPL_Whirlwind_DAMAGE)

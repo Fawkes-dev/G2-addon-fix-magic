@@ -26,6 +26,7 @@ func void B_AssessMagic()
 	// ------ Whirlwind ------
 	if (Npc_GetLastHitSpellID(self) == SPL_Whirlwind)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_Whirlwind, 0, "");
@@ -39,6 +40,7 @@ func void B_AssessMagic()
 	// ---- SuckEnergy ----
 	if (Npc_GetLastHitSpellID(self) == SPL_SuckEnergy)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_SuckEnergy, 0, "");
@@ -48,6 +50,7 @@ func void B_AssessMagic()
 	// ---- GreenTentacle ----
 	if (Npc_GetLastHitSpellID(self) == SPL_Greententacle)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_Greententacle, 0, "");
@@ -58,6 +61,7 @@ func void B_AssessMagic()
 	// ---- Swarm ----
 	if (Npc_GetLastHitSpellID(self) == SPL_Swarm)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_Swarm, 0, "");
@@ -71,6 +75,7 @@ func void B_AssessMagic()
 	if ((Npc_GetLastHitSpellID(self) == SPL_IceCube)
 	|| (Npc_GetLastHitSpellID(self) == SPL_IceWave))
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_MagicFreeze, 0, "");
@@ -80,6 +85,7 @@ func void B_AssessMagic()
 	// ------ ChargeZap ------
 	if (Npc_GetLastHitSpellID(self) == SPL_ChargeZap)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
 		AI_StartState(self, ZS_ShortZapped, 0, "");
@@ -98,6 +104,7 @@ func void B_AssessMagic()
 		&& (self.guild != GIL_PAL))
 		{
 			// AI_StartState(self, ZS_Flee, 0, "");
+			self.aivar[AIV_StateTime] = 0;
 			AI_StartState(self, ZS_MagicFlee, 0, "");
 			return;
 		}
@@ -108,6 +115,7 @@ func void B_AssessMagic()
 		&& (self.guild != GIL_ICEGOLEM)
 		&& (self.guild != GIL_FIREGOLEM))
 		{
+			self.aivar[AIV_StateTime] = 0;
 			AI_StartState(self, ZS_MM_Flee, 0, "");
 			return;
 		};
@@ -116,6 +124,7 @@ func void B_AssessMagic()
 	// Firespells senden ein ASSESSMAGIC bei Kollision
 	if (Npc_GetLastHitSpellID(self) == SPL_Firerain)
 	{
+		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		// B_ClearPerceptions (self); // Sonst reagiert der NPC nicht!
 		AI_StartState(self, ZS_MagicBurnShort, 0, "");
