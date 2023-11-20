@@ -1280,8 +1280,10 @@ instance spellFX_Firebolt(CFx_Base_Proto)
 	emActionCollStat_S = "COLLIDE CREATE CREATEQUAD";
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_Firebolt_COLLIDEFX";
+
 	emFXCollDyn_S = "spellFX_Firebolt_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "VOB_MAGICBURN";
+	//emFXCollDynPerc_S = "VOB_MAGICBURN";
+
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
@@ -1337,6 +1339,7 @@ instance spellFX_Firebolt_COLLIDEDYNFX(CFx_Base_Proto)
 	visAlpha = 1;
 	emtrjmode_s = "FIXED";
 	lightPresetname = "FIRESMALL";
+	emFXCreate_S = "VOB_MAGICBURN";
 };
 
 ///   													XXXXXXXXXXXXXXXXXXXXXXX
