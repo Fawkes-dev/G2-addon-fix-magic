@@ -1021,10 +1021,18 @@ instance spellFX_RingRitual1(CFx_Base_Proto) // ADDON
 	userString[2] = "MUL";
 	lightPresetname = "FIRESMALL";
 
-	emFXCreate_S = "spellFX_Firestorm_COLLIDE";
+	emFXCreate_S = "spellFX_RingRitual1_COLLIDE";
 
 	sfxid = "MFX_FIrestorm_Collide";
 	sfxisambient = 1;
+};
+
+instance spellFX_RingRitual1_COLLIDE(CFx_Base_Proto)
+{
+	visname_S = "MFX_Fireball_Collide3";
+	visAlpha = 1;
+	emtrjmode_s = "FIXED";
+	sfxid = "MFX_Fireball_Collide3";
 };
 
 instance spellFX_RingRitual1_COLLIDEDYNFX(CFx_Base_Proto)
