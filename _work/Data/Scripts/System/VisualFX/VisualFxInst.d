@@ -1800,7 +1800,7 @@ instance spellFX_Pyrokinesis(CFx_Base_Proto)
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_Pyrokinesis_SPREAD";
 	emFXCollDyn_S = "spellFX_Pyrokinesis_SPREAD";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
