@@ -653,7 +653,11 @@ instance spellFX_Greententacle_Bridge(CFX_BASE_PROTO)
 	emtrjdynupdatetargetonly = 1;
 	emactioncolldyn_s = "COLLIDE CREATEONCE";
 	emactioncollstat_s = "COLLIDE";
-	emfxcolldynPerc_s = "SPELLFX_Greententacle_Target";
+	//emfxcolldynPerc_s = "SPELLFX_Greententacle_Target";
+
+	emFXCollDyn_S = "spellFX_Greententacle_TARGET";
+	emFXCollDynPerc_S = "spellFX_Greententacle_PERCEPTION";
+
 	emfxlifespan = - 1;
 	emselfrotvel_s = "0 0 0";
 	secsperdamage = - 1;
@@ -677,6 +681,11 @@ instance SpellFX_Greententacle_TARGET(CFx_Base_Proto)
 	visAlpha = 1;
 	emtrjmode_s = "FIXED";
 	sfxid = "MFX_Greententacle_Grow";
+};
+
+instance spellFX_Greententacle_PERCEPTION(CFx_Base_Proto)
+{
+	visname_S = "";
 	sendAssessMagic = 1;
 };
 
