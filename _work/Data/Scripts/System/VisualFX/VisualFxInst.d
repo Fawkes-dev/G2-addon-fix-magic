@@ -1010,7 +1010,7 @@ instance spellFX_RingRitual1(CFx_Base_Proto) // ADDON
 	emActionCollStat_S = "CREATE CREATEQUAD";
 	// emActionCollDyn_S = "CREATEONCE";
 	// emFXCollStat_S = "spellFX_Firestorm_COLLIDE"; // [Edenfeld] Wenn einkommentiert, erzeugt sehr viele VFX -> nicht sichtbar/Performance Probs.
-	emFXCollDyn_S = "spellFX_ChargeFireball_COLLIDEDYNFX";
+	emFXCollDyn_S = "spellFX_RingRitual1_COLLIDEDYNFX";
 	// emFXCollDynPerc_S = "vob_magicburn";
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
@@ -1025,6 +1025,15 @@ instance spellFX_RingRitual1(CFx_Base_Proto) // ADDON
 
 	sfxid = "MFX_FIrestorm_Collide";
 	sfxisambient = 1;
+};
+
+instance spellFX_RingRitual1_COLLIDEDYNFX(CFx_Base_Proto)
+{
+	visname_S = "MFX_Fireball_Collide1";
+	visAlpha = 1;
+	emTrjOriginNode = "BIP01";
+	emtrjmode_s = "FIXED";
+	lightPresetname = "FIRESMALL";
 };
 
 instance spellFX_RingRitual1_KEY_INIT(C_ParticleFXEmitKey)
