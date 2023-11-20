@@ -1642,7 +1642,7 @@ instance spellFX_Firestorm(CFx_Base_Proto)
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_Firestorm_SPREAD";
 	emFXCollDyn_S = "spellFX_Firestorm_SPREAD";
-	emFXCollDynPerc_S = "vob_magicburn";
+	//emFXCollDynPerc_S = "vob_magicburn";
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
@@ -1772,6 +1772,7 @@ instance spellFX_Firestorm_COLLIDE(CFx_Base_Proto)
 	visAlpha = 1;
 	emtrjmode_s = "FIXED";
 	sfxid = "MFX_Fireball_Collide3";
+	emFXCreate_S = "VOB_MAGICBURN";
 };
 
 ///   													XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
