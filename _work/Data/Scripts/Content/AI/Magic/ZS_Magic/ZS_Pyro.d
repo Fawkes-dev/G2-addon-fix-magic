@@ -50,6 +50,9 @@ func int ZS_Pyro()
 
 func int ZS_Pyro_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	if (Npc_GetStateTime(self) >= 1)
 	{
 		Npc_SetStateTime(self, 0);

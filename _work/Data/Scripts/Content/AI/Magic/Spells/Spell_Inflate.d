@@ -36,6 +36,7 @@ func int Spell_Logic_Inflate(var int manaInvested) // Parameter manaInvested wir
 		&& (other.guild != GIL_DMT)
 		&& (other.guild != GIL_PAL))
 		{
+			Npc_SetTarget(other, self);
 			other.aivar[AIV_StateTime] = 0;
 			Npc_ClearAIQueue(other);
 			B_ClearPerceptions(other);

@@ -76,6 +76,9 @@ func int ZS_MagicBurnShort()
 
 func int ZS_MagicBurnShort_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	Npc_PercEnable(self, PERC_ASSESSMAGIC, B_RestartBurnShort); // falls ein NSC nochmal von einem Firespell getroffen wurde, so muss die State Time reseted werden
 
 	// evtl. kann man hier auch den aktuellen Spell Level holen, und dann mehr Schaden verabreichen.

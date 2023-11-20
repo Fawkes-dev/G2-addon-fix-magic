@@ -51,6 +51,9 @@ func int ZS_Inflate()
 
 func int ZS_Inflate_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	// EXIT LOOP if...
 
 	if (Npc_GetStateTime(self) > SPL_TIME_Inflate)

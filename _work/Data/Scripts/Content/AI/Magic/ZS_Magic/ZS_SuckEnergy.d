@@ -55,6 +55,9 @@ func int ZS_SuckEnergy()
 
 func int ZS_SuckEnergy_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	// EXIT LOOP if...
 
 	if ((Npc_GetStateTime(self) > SPL_TIME_SuckEnergy)

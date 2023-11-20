@@ -75,6 +75,9 @@ func void ZS_MagicFlee()
 
 func int ZS_MagicFlee_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	if (Npc_GetStateTime(self) > SPL_Time_Fear)
 	{
 		Npc_ClearAIQueue(self);

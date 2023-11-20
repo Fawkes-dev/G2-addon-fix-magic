@@ -70,6 +70,9 @@ func void ZS_MagicSleep()
 
 func int ZS_MagicSleep_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	if (Npc_GetStateTime(self) > SPL_Time_Sleep)
 	{
 		Npc_ClearAIQueue(self);

@@ -56,6 +56,9 @@ func int ZS_ShortZapped()
 
 func int ZS_ShortZapped_Loop()
 {
+	//Update other from Npc_GetTarget or AIV_LASTTARGET if target is not valid (fix save/load issues)
+	B_ValidateOther();
+
 	if (Npc_GetStateTime(self) > SPL_TIME_SHORTZAPPED)
 	{
 		B_StopShortZapped();

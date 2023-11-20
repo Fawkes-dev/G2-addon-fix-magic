@@ -26,6 +26,7 @@ func void B_AssessMagic()
 	// ------ Whirlwind ------
 	if (Npc_GetLastHitSpellID(self) == SPL_Whirlwind)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -40,6 +41,7 @@ func void B_AssessMagic()
 	// ---- SuckEnergy ----
 	if (Npc_GetLastHitSpellID(self) == SPL_SuckEnergy)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -50,6 +52,7 @@ func void B_AssessMagic()
 	// ---- GreenTentacle ----
 	if (Npc_GetLastHitSpellID(self) == SPL_Greententacle)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -61,6 +64,7 @@ func void B_AssessMagic()
 	// ---- Swarm ----
 	if (Npc_GetLastHitSpellID(self) == SPL_Swarm)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -75,6 +79,7 @@ func void B_AssessMagic()
 	if ((Npc_GetLastHitSpellID(self) == SPL_IceCube)
 	|| (Npc_GetLastHitSpellID(self) == SPL_IceWave))
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -85,6 +90,7 @@ func void B_AssessMagic()
 	// ------ ChargeZap ------
 	if (Npc_GetLastHitSpellID(self) == SPL_ChargeZap)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
@@ -95,9 +101,9 @@ func void B_AssessMagic()
 	// ------ Fear ------
 	if (Npc_GetLastHitSpellID(self) == SPL_Fear)
 	{
+		Npc_SetTarget(self, other);
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
-		Npc_SetTarget(self, other);
 
 		if ((self.guild < GIL_SEPERATOR_HUM)
 		&& (self.guild != GIL_KDF)
@@ -124,6 +130,7 @@ func void B_AssessMagic()
 	// Firespells senden ein ASSESSMAGIC bei Kollision
 	if (Npc_GetLastHitSpellID(self) == SPL_Firerain)
 	{
+		Npc_SetTarget(self, other);
 		self.aivar[AIV_StateTime] = 0;
 		Npc_ClearAIQueue(self);
 		// B_ClearPerceptions (self); // Sonst reagiert der NPC nicht!

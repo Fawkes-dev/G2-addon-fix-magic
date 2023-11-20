@@ -52,6 +52,9 @@ func int ZS_MagicFreeze()
 
 func int ZS_MagicFreeze_Loop()
 {
+	//Update other from AIV_LASTTARGET if not valid (fix save/load issues)
+	B_ValidateOther();
+
 	// EXIT LOOP if...
 
 	if (Npc_GetStateTime(self) > SPL_TIME_FREEZE)
