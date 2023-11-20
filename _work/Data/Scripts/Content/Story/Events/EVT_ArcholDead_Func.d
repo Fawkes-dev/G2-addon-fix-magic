@@ -2,7 +2,7 @@
 // 	EVT_ARCHOLDEAD_FUNC (bei Archol dem Schattenlord)
 //****************************
 var int EVT_ARCHOLDEAD_FUNC_OneTime;
-func void EVT_ARCHOLDEAD_FUNC ()
+func void EVT_ARCHOLDEAD_FUNC()
 {
 	if (Npc_IsDead(Skeleton_Lord_Archol))
 	{
@@ -13,10 +13,10 @@ func void EVT_ARCHOLDEAD_FUNC ()
 		Skeleton_Archol5.aivar[AIV_EnemyOverride] = FALSE;
 		Skeleton_Archol6.aivar[AIV_EnemyOverride] = FALSE;
 	};
-	
-		if (EVT_ARCHOLDEAD_FUNC_OneTime == FALSE)
-		{
-			B_LogEntry (TOPIC_HallenVonIrdorath,"I've found something like a temple here. It is inhabited by a lot of undead beings. This all reminds me a lot of the damned orc temple of the Sleeper. This time I will not fail. Not this time!"); 
-			EVT_ARCHOLDEAD_FUNC_OneTime = TRUE;
-		};
+
+	if (EVT_ARCHOLDEAD_FUNC_OneTime == FALSE)
+	{
+		B_LogEntry(TOPIC_HallenVonIrdorath, "I've found something like a temple here. It is inhabited by a lot of undead beings. This all reminds me a lot of the damned orc temple of the Sleeper. This time I will not fail. Not this time!");
+		EVT_ARCHOLDEAD_FUNC_OneTime = TRUE;
+	};
 };

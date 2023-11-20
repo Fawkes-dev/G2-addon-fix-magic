@@ -1,181 +1,196 @@
-INSTANCE ITKE_PORTALTEMPELWALKTHROUGH_ADDON (C_Item)
+instance ITKE_PORTALTEMPELWALKTHROUGH_ADDON(C_Item)
 {
-	name 				=	"Rusty Key";
+	name						= "Rusty Key";
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	visual						= "ItKe_Key_01.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	name;
-	
-	TEXT[2]				=	"Fits the door of the";
-	TEXT[3]				=   "Teleporter stone in the portal temple";
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-//-----------------------------------------------------------------------
-INSTANCE ITKE_Greg_ADDON_MIS (C_Item)
-{
-	name 				=	NAME_Key;
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"The key to the monastery's";
-	TEXT[3]				=   "Captain's hut";
-	TEXT[4]				=   "Greg";	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-//-----------------------------------------------------------------------
-INSTANCE ITKE_Addon_Tavern_01 (C_Item)
-{
-	name 				=	NAME_Key;
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	"Lou's key";
-	
-	TEXT[2]				=	"Fits the tavern";
-	TEXT[3]				=   "in the bandit camp";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-//-----------------------------------------------------------------------
-INSTANCE ITKE_Addon_Esteban_01 (C_Item)
-{
-	name 				=	NAME_Key;
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	"Esteban's key";
-	
-	TEXT[2]				=	"Fits the chest";
-	TEXT[3]				=   "in his hideout";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= name;
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Fits the door of the";						count[2] = 0;
+	text[3]						= "Teleporter stone in the portal temple";		count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
 
-//-----------------------------------------------------------------------
-INSTANCE ITKE_ORLAN_TELEPORTSTATION (C_Item)
+// -----------------------------------------------------------------------
+instance ITKE_Greg_ADDON_MIS(C_Item)
 {
-	name 				=	NAME_Key;
+	name						= NAME_Key;
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	visual						= "ItKe_Key_01.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	"Orlan's key";
-	
-	TEXT[2]				=	"Fits the door of the cave";
-	TEXT[3]				=   "south of his tavern";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= name;
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "The key to the monastery's";					count[2] = 0;
+	text[3]						= "Captain's hut";								count[3] = 0;
+	text[4]						= "Greg";										count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
 
-
-//-----------------------------------------------------------------------
-INSTANCE ITKE_CANYONLIBRARY_HIERARCHY_BOOKS_ADDON (C_Item)
+// -----------------------------------------------------------------------
+instance ITKE_Addon_Tavern_01(C_Item)
 {
-	name 				=	NAME_Key;
+	name						= NAME_Key;
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	name;
-	
-	TEXT[2]				=	"from the orc shaman in the orc camp";
-	TEXT[3]				=   "in front of the Library of the Scholars";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= "Lou's key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Fits the tavern";							count[2] = 0;
+	text[3]						= "in the bandit camp";							count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
-//-----------------------------------------------------------------------
-INSTANCE ITKE_ADDON_BUDDLER_01 (C_Item)
+
+// -----------------------------------------------------------------------
+instance ITKE_Addon_Esteban_01(C_Item)
 {
-	name 				=	NAME_Key;
+	name						= NAME_Key;
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	0;
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	"Chest Key";
-	
-	TEXT[2]				=	"From the bandit camp";
-	TEXT[3]				=   "";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= "Esteban's key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Fits the chest";								count[2] = 0;
+	text[3]						= "in his hideout";								count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
-//-----------------------------------------------------------------------
-INSTANCE ITKE_ADDON_SKINNER (C_Item)
+
+// -----------------------------------------------------------------------
+instance ITKE_ORLAN_TELEPORTSTATION(C_Item)
 {
-	name 				=	NAME_Key;
+	name						= NAME_Key;
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	0;
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	"Chest Key";
-	
-	TEXT[2]				=	"Skinner's key";
-	TEXT[3]				=   "";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= "Orlan's key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Fits the door of the cave";					count[2] = 0;
+	text[3]						= "south of his tavern";						count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
-//-----------------------------------------------------------------------
-INSTANCE ITKE_Addon_Thorus (C_Item)
+
+// -----------------------------------------------------------------------
+instance ITKE_CANYONLIBRARY_HIERARCHY_BOOKS_ADDON(C_Item)
 {
-	name 				=	NAME_Key;
+	name						= NAME_Key;
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
 
-	value 				=	0;
+	visual						= "ItKe_Key_01.3ds";
+	material					= MAT_METAL;
 
-	visual 				=	"ItKe_Key_02.3ds";
-	material 			=	MAT_METAL;
+	value						= Value_Key_01;
 
-	description			= 	"Thorus' key";
-	
-	TEXT[2]				=	"Fits a chest";
-	TEXT[3]				=   "";
-	
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+	description					= name;
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "from the orc shaman in the orc camp";		count[2] = 0;
+	text[3]						= "in front of the Library of the Scholars";	count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
+};
+
+// -----------------------------------------------------------------------
+instance ITKE_ADDON_BUDDLER_01(C_Item)
+{
+	name						= NAME_Key;
+
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
+
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
+
+	value						= 0;
+
+	description					= "Chest Key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "From the bandit camp";						count[2] = 0;
+	text[3]						= "";											count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
+};
+
+// -----------------------------------------------------------------------
+instance ITKE_ADDON_SKINNER(C_Item)
+{
+	name						= NAME_Key;
+
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
+
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
+
+	value						= 0;
+
+	description					= "Chest Key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Skinner's key";								count[2] = 0;
+	text[3]						= "";											count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
+};
+
+// -----------------------------------------------------------------------
+instance ITKE_Addon_Thorus(C_Item)
+{
+	name						= NAME_Key;
+
+	mainflag					= ITEM_KAT_NONE;
+	flags						= ITEM_MISSION;
+
+	visual						= "ItKe_Key_02.3ds";
+	material					= MAT_METAL;
+
+	value						= 0;
+
+	description					= "Thorus' key";
+	text[0]						= "";											count[0] = 0;
+	text[1]						= "";											count[1] = 0;
+	text[2]						= "Fits a chest";								count[2] = 0;
+	text[3]						= "";											count[3] = 0;
+	text[4]						= "";											count[4] = 0;
+	text[5]						= NAME_Value;									count[5] = value;
 };
