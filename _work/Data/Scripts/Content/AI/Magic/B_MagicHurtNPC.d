@@ -19,5 +19,9 @@ func void B_MagicHurtNpc(var C_Npc slf, var C_Npc oth, var int damage)
 
 			oth.aivar[AIV_VictoryXPGiven] = TRUE;
 		};
+
+		//Fix B_MagicHurtNpc killing Npc exploits by clearing AI queue - this will start ZS_Dead state (and clear runes + traders inventory)
+		Npc_ClearAIQueue(oth);
+		AI_StandUpQuick(oth);
 	};
 };
