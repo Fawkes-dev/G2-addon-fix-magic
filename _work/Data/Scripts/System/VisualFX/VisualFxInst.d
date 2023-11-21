@@ -2750,7 +2750,11 @@ instance spellFX_IceCube(CFx_Base_Proto)
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_IceCube_COLLIDE";
 	// emFXCollDyn_S = "spellFX_Icespell_COLLIDEDYNFX";
+	// emFXCollDynPerc_S = "spellFX_Icespell_SENDPERCEPTION";
+
+	emFXCollDyn_S = "spellFX_Icespell_TARGET";
 	emFXCollDynPerc_S = "spellFX_Icespell_SENDPERCEPTION";
+
 	emTrjTargetRange = 20;
 	emTrjTargetElev = 0;
 	emTrjDynUpdateDelay = 20000;
@@ -2840,7 +2844,11 @@ instance spellFX_Icewave_WAVE(CFx_Base_Proto)
 	emTrjOriginNode = "ZS_RIGHTHAND";
 	emActionCollDyn_S = "CREATEONCE";
 	// emFXCollDyn_S = "spellFX_IceSpell_COLLIDEDYNFX";
+	// emFXCollDynPerc_S = "spellFX_Icespell_SENDPERCEPTION";
+
+	emFXCollDyn_S = "spellFX_Icespell_TARGET";
 	emFXCollDynPerc_S = "spellFX_Icespell_SENDPERCEPTION";
+
 	emFXCollDynAlign_S = "COLLISIONNORMAL";
 	emCheckCollision = 1;
 	LightPresetName = "WHITEBLEND";
@@ -4605,14 +4613,28 @@ instance spellFX_Thunderspell_TARGET_CHILD11(CFx_Base_Proto) // gehört zu FX-Ke
 
 // HUMAN oder VOB ist eingefroren von IceSpell
 
-instance spellFX_IceSpell_SENDPERCEPTION(CFx_Base_Proto)
+instance spellFX_Icespell_TARGET(CFx_Base_Proto)
 {
 	visname_S = "MFX_IceSpell_Target";
 	visAlpha = 1;
 	emtrjmode_s = "FIXED";
-	sendAssessMagic = 1;
 	emAdjustShpToOrigin = 1;
 	sfxid = "MFX_Icecube_Target";
+
+	emfxcreate_s = "spellFX_IceSpell_TARGETEND";
+};
+
+instance spellFX_IceSpell_TARGETEND(CFx_Base_Proto)
+{
+	visname_S = "dummy_sfx"; //visName_S cannot be empty in combination with emFXTriggerDelay
+	emFXTriggerDelay = 20; //create sfxid with 20 seconds delay
+	sfxid = "MFX_Icecube_Collide";
+};
+
+instance spellFX_IceSpell_SENDPERCEPTION(CFx_Base_Proto)
+{
+	visname_S = "";
+	sendAssessMagic = 1;
 };
 
 // Earth Quake FX
