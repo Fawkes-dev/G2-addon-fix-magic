@@ -25,7 +25,7 @@ func void ZS_Flee()
 
 func int ZS_Flee_Loop()
 {
-	Npc_GetTarget(self); // other = target
+	var int retVal; retVal = Npc_GetTarget(self); // other = target
 
 	// EXIT LOOP if...
 

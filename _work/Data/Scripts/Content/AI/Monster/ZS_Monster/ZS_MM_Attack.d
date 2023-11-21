@@ -54,7 +54,7 @@ func void ZS_MM_Attack()
 
 func int ZS_MM_Attack_Loop()
 {
-	Npc_GetTarget(self); // other = target
+	var int retVal; retVal = Npc_GetTarget(self); // other = target
 
 	// ------ Regeneration ------
 	if (self.guild == GIL_DRAGON)

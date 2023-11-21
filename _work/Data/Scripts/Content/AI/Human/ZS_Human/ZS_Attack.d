@@ -83,7 +83,7 @@ func int ZS_Attack_Loop()
 	B_Greg_ComesToDexter(); // Joly:// ADDON
 
 	// ----- NICHT unten, sonst bei LOAD Game other trotz B_ValidateOther verloren! Warum??? -----
-	Npc_GetTarget(self); // other = target
+	var int retVal; retVal = Npc_GetTarget(self); // other = target
 
 	// EXIT LOOP if...
 

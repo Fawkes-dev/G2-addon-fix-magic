@@ -16,7 +16,7 @@ func void B_ValidateOther()
 	}
 	else
 	{
-		Npc_GetTarget(self); // other = target
+		var int retVal; retVal = Npc_GetTarget(self); // other = target
 		self.aivar[AIV_LASTTARGET] = Hlp_GetInstanceID(other);
 
 		self.aivar[AIV_LOADGAME] = FALSE;

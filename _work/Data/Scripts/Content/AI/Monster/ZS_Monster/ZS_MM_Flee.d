@@ -14,7 +14,7 @@ func void ZS_MM_Flee()
 
 func int ZS_MM_Flee_Loop()
 {
-	Npc_GetTarget(self); // other = target
+	var int retVal; retVal = Npc_GetTarget(self); // other = target
 
 	if (Npc_GetDistToNpc(self, other) < 2000)
 	{
