@@ -2726,6 +2726,7 @@ instance spellFX_chargezap_COLLIDE(CFx_Base_Proto)
 	emTrjOriginNode = "BIP01";
 	emtrjmode_s = "FIXED";
 	lightPresetname = "FIRESMALL";
+	emfxcreate_s = "spellFX_Lightning_TARGET";
 };
 
 instance spellFX_chargezap_COLLIDE_KEY_INVEST_1(C_ParticleFXEmitKey) { visname_S = "MFX_Thunderball_Collide1"; sfxid = "MFX_Thunderball_Collide1"; };
@@ -4494,14 +4495,8 @@ instance spellFX_Lightning_TARGET(CFx_Base_Proto)
 
 instance spellFX_Thunderspell_SENDPERCEPTION(CFx_Base_Proto) // gehört zu FX-Kette. DO NOT DELETE
 {
-	visname_S = "MFX_Thunderball_Target";
-	emTrjOriginNode = "BIP01 Head";
-	visAlpha = 1;
-	emtrjmode_s = "FIXED";
+	visname_S = "";
 	sendAssessMagic = 1;
-	sfxid = "MFX_Lightning_Target";
-	emfxcreate_s = "spellFX_Thunderspell_SENDPERCEPTION_CHILD1";
-	emFXCreatedOwnTrj = 1;
 };
 
 instance spellFX_Thunderspell_SENDPERCEPTION_CHILD1(CFx_Base_Proto) // gehört zu FX-Kette. DO NOT DELETE
