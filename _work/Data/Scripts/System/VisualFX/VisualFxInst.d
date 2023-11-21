@@ -4094,7 +4094,7 @@ instance spellFX_Deathbolt(CFx_Base_Proto)
 	emActionCollDyn_S = "COLLIDE CREATEONCE";
 	emFXCollStat_S = "spellFX_Deathbolt_COLLIDE";
 	emFXCollDyn_S = "spellFX_Deathbolt_COLLIDEDYNFX";
-	emFXCollDynPerc_S = "VOB_MAGICBURN";
+	//emFXCollDynPerc_S = "VOB_MAGICBURN";
 	emFXCollStatAlign_S = "COLLISIONNORMAL";
 	emFXCreatedOwnTrj = 0;
 	emTrjTargetRange = 20;
@@ -4180,6 +4180,7 @@ instance spellFX_Deathbolt_COLLIDEDYNFX(CFx_Base_Proto)
 	emTrjOriginNode = "BIP01";
 	emtrjmode_s = "FIXED";
 	lightPresetname = "FIRESMALL";
+	emFXCreate_S = "VOB_MAGICBURN";
 };
 
 instance spellFX_Deathbolt_COLLIDEDYNFX_KEY_INVEST_1(C_ParticleFXEmitKey) { visname_S = "MFX_Fireball_Collide1"; sfxid = "MFX_Fireball_Collide1"; };
