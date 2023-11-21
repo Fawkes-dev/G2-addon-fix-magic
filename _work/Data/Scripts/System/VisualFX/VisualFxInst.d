@@ -3629,7 +3629,7 @@ instance spellFX_Windfist_Invest(CFx_Base_Proto)
 instance spellFX_Windfist_INVESTBLAST(CFX_Base_Proto)
 {
 	visname_S = "MFX_WINDFIST_INVEST_BLAST";
-	sfxid = "MFX_WINDFIST_INVESBLAST";
+	sfxid = "MFX_WINDFIST_INVESTBLAST";
 	sfxisambient = 1;
 };
 
