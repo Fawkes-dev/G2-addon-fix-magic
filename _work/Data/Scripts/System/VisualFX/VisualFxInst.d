@@ -4050,7 +4050,7 @@ instance spellFX_Concussionbolt_KEY_CAST(C_ParticleFXEmitKey)
 	visname_S = "MFX_PalHolyBolt_CAST";
 	emtrjmode_s = "TARGET";
 	emtrjeasevel = 1600.;
-	sfxid = "MFX_PalHolyBolt_Cast";
+	sfxid = "MFX_Thunderbolt_Cast";
 	emCheckCollision = 1;
 	// emCreateFXID = "FX_CAST2";
 };
