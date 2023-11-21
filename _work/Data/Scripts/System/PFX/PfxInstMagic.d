@@ -6249,6 +6249,46 @@ instance MFX_THUNDERBALL_COLLIDE_WALLGLOW(C_PARTICLEFX)
 	visalphafunc_s = "ADD";
 };
 
+INSTANCE MFX_THUNDERBALL_TARGET (C_PARTICLEFX)
+{
+	ppsvalue = 30.000000000;
+	ppsscalekeys_s = "1 1 1 1 1";
+	ppsissmooth = 1;
+	ppsfps = 1.000000000;
+	shptype_s = "SPHERE";
+	shpfor_s = "object";
+	shpoffsetvec_s = "0 0 0";
+	shpdistribtype_s = "RAND";
+	shpisvolume = 1;
+	shpdim_s = "30";
+	shpscalekeys_s = "1";
+	shpscaleislooping = 1;
+	shpscaleissmooth = 1;
+	shpscalefps = 2.000000000;
+	dirmode_s = "RAND";
+	dirfor_s = "object";
+	dirmodetargetfor_s = "OBJECT";
+	dirmodetargetpos_s = "0 0 0";
+	dirangleheadvar = 180.000000000;
+	dirangleelevvar = 180.000000000;
+	velavg = 0.001000000;
+	velvar = 0.000100000;
+	lsppartavg = 150.000000000;
+	flygravity_s = "0 0 0";
+	visname_s = "LIGHTNING_BIG_A0.TGA";
+	visorientation_s = "VELO";
+	vistexisquadpoly = 1;
+	vistexanifps = 18.000000000;
+	vistexaniislooping = 1;
+	vistexcolorstart_s = "0 190 255";
+	vistexcolorend_s = "0 0 150";
+	vissizestart_s = "20 20";
+	vissizeendscale = 2.000000000;
+	visalphafunc_s = "ADD";
+	visalphastart = 255.000000000;
+	visalphaend = 255.000000000;
+};
+
 ///   													XXXXXXXXXXXXXXXXXXXXX
 ///   													XX I C E C U B E XX
 ///   													XXXXXXXXXXXXXXXXXXXXX
