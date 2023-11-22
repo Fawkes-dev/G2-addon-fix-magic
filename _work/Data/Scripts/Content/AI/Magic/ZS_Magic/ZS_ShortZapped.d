@@ -32,7 +32,7 @@ func void B_StopShortZapped()
 // NSC wird von ChargeZap getroffen
 // **********************************
 
-func int ZS_ShortZapped()
+func void ZS_ShortZapped()
 {
 	Npc_PercEnable(self, PERC_ASSESSSTOPMAGIC, B_StopShortZapped);
 
@@ -62,12 +62,15 @@ func int ZS_ShortZapped_Loop()
 	if (Npc_GetStateTime(self) > SPL_TIME_SHORTZAPPED)
 	{
 		B_StopShortZapped();
+		return LOOP_END;
 	};
 
 	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
 		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_ShortZapped_End()

@@ -33,7 +33,7 @@ func void B_StopZapped()
 // NSC wird von SPL_LightningFlash getroffen
 // *****************************************
 
-func int ZS_Zapped()
+func void ZS_Zapped()
 {
 	Npc_PercEnable(self, PERC_ASSESSSTOPMAGIC, B_StopZapped);
 
@@ -70,9 +70,9 @@ func int ZS_Zapped_Loop()
 
 			return LOOP_END;
 		};
-
-		return LOOP_CONTINUE;
 	};
+
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Zapped_End()

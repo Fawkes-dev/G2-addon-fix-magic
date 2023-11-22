@@ -28,7 +28,7 @@ func void B_StopPyro()
 // ZS_Pyro
 // *******
 
-func int ZS_Pyro()
+func void ZS_Pyro()
 {
 	Npc_PercEnable(self, PERC_ASSESSSTOPMAGIC, B_StopPyro);
 

@@ -11,7 +11,7 @@
 // wenn SPL_Time_Sleep vorbei ist
 // **************************************
 
-func int B_StopMagicFlee()
+func void B_StopMagicFlee()
 {
 	Npc_PercDisable(self, PERC_ASSESSDAMAGE); // weil Wahrnehmung unten auf B_StopMagicSleep verweist
 
@@ -82,13 +82,15 @@ func int ZS_MagicFlee_Loop()
 	{
 		Npc_ClearAIQueue(self);
 		B_StopMagicFlee();
-		// return LOOP_END;
+		return LOOP_END;
 	};
 
 	if (Npc_GetStateTime(self) != self.aivar[AIV_StateTime])
 	{
 		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MagicFlee_End()

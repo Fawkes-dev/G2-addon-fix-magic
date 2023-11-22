@@ -40,7 +40,7 @@ func void B_StopGreententacle()
 // ZS_Greententacle
 // **************
 
-func int ZS_Greententacle()
+func void ZS_Greententacle()
 {
 	Npc_PercEnable(self, PERC_ASSESSMAGIC, B_RestartGreententacle); // falls ein NSC nochmal von einem Freezespell getroffen wurde, so muss die State Time reseted werden
 	Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_AssessDamage);
@@ -115,8 +115,8 @@ func int ZS_Greententacle_Loop()
 		self.aivar[AIV_GreententacleStateTime] = Npc_GetStateTime(self);
 	*/
 
-		return LOOP_CONTINUE;
-	};
+	return LOOP_CONTINUE;
+};
 
 func void ZS_GreenTentacle_End()
 {

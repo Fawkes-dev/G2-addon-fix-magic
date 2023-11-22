@@ -84,6 +84,8 @@ func int ZS_MagicSleep_Loop()
 	{
 		self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MagicSleep_End()
