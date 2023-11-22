@@ -12,6 +12,35 @@ func int Spell_ProcessMana(var int manaInvested)
 {
 	var int activeSpell; activeSpell = Npc_GetActiveSpell(self);
 
+	//Spells with property emFXInvestOrigin_S need to be set to next level first - otherwise below vfx effects would not be created 
+	if (manaInvested == 0) {
+		if ((activeSpell == SPL_PalTeleportSecret) //vfx MFX_TELEPORT_INVEST & sfx MFX_teleport_invest & vfx MFX_TELEPORT_RING
+		|| (activeSpell == SPL_TeleportSeaport)
+		|| (activeSpell == SPL_TeleportMonastery)
+		|| (activeSpell == SPL_TeleportFarm)
+		|| (activeSpell == SPL_TeleportXardas)
+		|| (activeSpell == SPL_TeleportPassNW)
+		|| (activeSpell == SPL_TeleportPassOW)
+		|| (activeSpell == SPL_TeleportOC)
+		|| (activeSpell == SPL_TeleportOWDemonTower)
+		|| (activeSpell == SPL_TeleportTaverne)
+
+		|| (activeSpell == SPL_Firerain) //vfx MFX_FireRain_INVESTGLOW & sfx MFX_Firerain_INVEST + FX_EarthQuake
+		|| (activeSpell == SPL_Thunderstorm) //FX_EarthQuake
+		|| (activeSpell == SPL_SuckEnergy) //vfx MFX_SUCKENERGY_INVEST
+		|| (activeSpell == SPL_Whirlwind) //sfx MFX_WHIRLWIND_INVEST
+
+		|| (activeSpell == SPL_Firestorm) //sfx MFX_Pyrokinesis_Target
+		|| (activeSpell == SPL_Pyrokinesis) //sfx MFX_Pyrokinesis_Target
+		|| (activeSpell == SPL_IceCube) //sfx MFX_ICECUBE_INVEST
+		|| (activeSpell == SPL_IceWave) //sfx MFX_ICECUBE_INVEST
+		|| (activeSpell == SPL_Windfist) //vfx MFX_WINDFIST_INVEST & sfx MFX_WINDFIST_INVEST
+		|| (activeSpell == SPL_Shrink)) //sfx MFX_SHRINK_INVEST
+		{
+			return SPL_NEXTLEVEL;
+		};
+	};
+
 	// Paladin-Runen
 	if (activeSpell == SPL_PalLight) { return Spell_Logic_PalLight(manaInvested); };
 	if (activeSpell == SPL_PalLightHeal) { return Spell_Logic_PalLightHeal(manaInvested); };
