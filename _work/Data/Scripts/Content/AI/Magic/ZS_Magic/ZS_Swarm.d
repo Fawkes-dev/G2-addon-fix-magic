@@ -8,6 +8,8 @@ func void B_RestartSwarm()
 	{
 		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
+
+		AI_PlayAniBS(self, "T_STAND_2_SWARM_VICTIM", BS_UNCONSCIOUS);
 	};
 };
 
@@ -43,12 +45,6 @@ func void ZS_Swarm()
 	Npc_ClearAIQueue(self);
 	AI_StandUp(self);
 
-	// Opfer wird in Bodystate Unconscious versetzt
-	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
-	{
-		AI_PlayAniBS(self, "T_STAND_2_SWARM_VICTIM", BS_UNCONSCIOUS);
-	};
-
 	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
@@ -63,6 +59,12 @@ func int ZS_Swarm_Loop()
 	{
 		B_StopSwarm();
 		return LOOP_END;
+	};
+
+	// Opfer wird in Bodystate Unconscious versetzt
+	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
+	{
+		AI_PlayAniBS(self, "T_STAND_2_SWARM_VICTIM", BS_UNCONSCIOUS);
 	};
 
 	// LOOP FUNC

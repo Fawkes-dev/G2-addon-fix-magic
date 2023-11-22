@@ -41,12 +41,6 @@ func void ZS_MagicFreeze()
 
 	Npc_StopAni(self, "S_FIRE_VICTIM"); // falls der NSC am Zappeln ist, brich die Ani ab
 
-	// Opfer wird in Bodystate Unconscious versetzt
-	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
-	{
-		AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
-	};
-
 	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
 
@@ -61,6 +55,12 @@ func int ZS_MagicFreeze_Loop()
 	{
 		B_StopMagicFreeze();
 		return LOOP_END;
+	};
+
+	// Opfer wird in Bodystate Unconscious versetzt
+	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
+	{
+		AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
 	};
 
 	// LOOP FUNC

@@ -14,6 +14,20 @@ func void B_RestartGreententacle()
 	{
 		self.aivar[AIV_StateTime] = 0;
 		Npc_SetStateTime(self, 0);
+
+		if (self.guild < GIL_SEPERATOR_HUM)
+		{
+			var int randy;
+			randy = Hlp_Random(3);
+
+			if (randy == 0) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEA_VICTIM", BS_UNCONSCIOUS); };
+			if (randy == 1) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEB_VICTIM", BS_UNCONSCIOUS); };
+			if (randy == 2) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEC_VICTIM", BS_UNCONSCIOUS); };
+		}
+		else
+		{
+			AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
+		};
 	};
 };
 
@@ -51,24 +65,6 @@ func void ZS_Greententacle()
 
 	Npc_ClearAIQueue(self);
 	AI_StandUp(self);
-
-	// Opfer wird in Bodystate Unconscious versetzt
-	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
-	{
-		if (self.guild < GIL_SEPERATOR_HUM)
-		{
-			var int randy;
-			// randy = Hlp_Random(3);
-
-			if (randy == 0) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEA_VICTIM", BS_UNCONSCIOUS); };
-			if (randy == 1) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEB_VICTIM", BS_UNCONSCIOUS); };
-			if (randy == 2) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEC_VICTIM", BS_UNCONSCIOUS); };
-		}
-		else
-		{
-			AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
-		};
-	};
 
 	Npc_SetStateTime(self, self.aivar[AIV_StateTime]);
 };
@@ -114,6 +110,24 @@ func int ZS_Greententacle_Loop()
 
 		self.aivar[AIV_GreententacleStateTime] = Npc_GetStateTime(self);
 	*/
+
+	// Opfer wird in Bodystate Unconscious versetzt
+	if (!C_BodyStateContains(self, BS_UNCONSCIOUS))
+	{
+		if (self.guild < GIL_SEPERATOR_HUM)
+		{
+			var int randy;
+			randy = Hlp_Random(3);
+
+			if (randy == 0) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEA_VICTIM", BS_UNCONSCIOUS); };
+			if (randy == 1) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEB_VICTIM", BS_UNCONSCIOUS); };
+			if (randy == 2) { AI_PlayAniBS(self, "T_STAND_2_GREENTENTACLEC_VICTIM", BS_UNCONSCIOUS); };
+		}
+		else
+		{
+			AI_PlayAniBS(self, "T_STAND_2_FREEZE_VICTIM", BS_UNCONSCIOUS);
+		};
+	};
 
 	return LOOP_CONTINUE;
 };
